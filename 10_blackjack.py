@@ -4,9 +4,10 @@ user_cards = random.choices(cards,k=2)
 computer_cards = random.choices(cards,k=2)
 
 def score(list1):
-    score = 0
-    for number in list1:
-        score+=number
+    score = sum(list1)
+    while 11 in list1 and score > 21:
+        list1[list1.index(11)] = 1
+        score = sum(list1)
     return score
 
 
