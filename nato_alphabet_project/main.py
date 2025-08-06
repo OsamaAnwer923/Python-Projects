@@ -4,8 +4,11 @@ data = pandas.read_csv(r'G:\osama\TO DO OSAMA\Python Projects(100 Days of Python
 
 alphabatic_dic = {row.letter:row.code for (index,row) in data.iterrows()}
 
-user_input = input("type a word").upper()
+user_input = input("type a word: ").upper()
 
-
-list_word = [alphabatic_dic[letter] for letter in user_input]
-print(list_word)
+try:
+    list_word = [alphabatic_dic[letter] for letter in user_input]
+except:
+    print("Enter Only Alphabates")
+else:
+    print(list_word)
